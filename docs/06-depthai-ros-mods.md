@@ -8,7 +8,7 @@ Target tree: `~/catkin_ws/src/depthai-ros/` on `.15`.
 
 ## Patch 1 — CMake minimum version
 
-depthai-ros 2.11.2 requires CMake ≥ 3.10.2 in several `CMakeLists.txt` files. Our Ubuntu 18.04 ships 3.10.2 exactly, which sometimes triggers a spurious policy warning. Bump it.
+depthai-ros 2.11.2 requires CMake ≥ 3.10.2 in several `CMakeLists.txt` files. Ubuntu 18.04 ships exactly 3.10.2, which sometimes triggers a spurious CMake policy warning. Add the `FATAL_ERROR` flag and a policy declaration to silence it.
 
 **Files:**
 - `depthai-ros/depthai_ros_driver/CMakeLists.txt`
